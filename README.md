@@ -3,6 +3,7 @@ Diploma Project
 The script used in the project is available as a .py file in the repository. The script is also divided into three parts according to the dataset being used. Three input datasets used in the repository are:
 
 1. Benchmark dataset used in [3]
+http://redwood-data.org/indoor/
 
 2. Two scans for ITC building Enschede for understanding manuel registration
 
