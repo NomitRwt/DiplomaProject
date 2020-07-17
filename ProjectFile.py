@@ -2,7 +2,7 @@ import open3d as o3d
 import numpy as np
 import copy
 
-"""
+
 # PART ONE: Working on self generated point cloud------------------------------------------------------------------------
 
 # 1.
@@ -143,9 +143,8 @@ def demo_manual_registration():
 
 demo_manual_registration()
 
-#Success
-"""
+
 
 # PART THREE: Working on benchmark dataset (Redwood)---------------------------------------------------------------------
 #Robust Reconstruction
-
+#Check Readme.md
