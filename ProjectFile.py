@@ -3,15 +3,8 @@ import numpy as np
 import copy
 
 
-# PART ONE: Working on self generated point cloud------------------------------------------------------------------------
-
-# 1.
-
-outlier_pcd = o3d.io.read_point_cloud("Electrical Pole.ply")
-o3d.visualization.draw_geometries([outlier_pcd])
-
-
-# Interactive Viusalization
+# Some important functions
+# Crop the large point cloud "Electrical Pole.ply" to get smaller geometry
 def demo_crop_geometry():
     print("Demo for manual geometry cropping")
     print("1) Press 'Y' twice to align geometry with negative direction of y-axis")
@@ -20,53 +13,61 @@ def demo_crop_geometry():
     print("   or use ctrl + left click for polygon selection")
     print("4) Press 'C' to get a selected geometry and to save it")
     print("5) Press 'F' to switch to freeview mode")
-    pcd = o3d.io.read_point_cloud("Electrical Pole.ply")
+    pcd = o3d.io.read_point_cloud("Electrical Pole.ply")  # Name of the point cloud that needs to be cropped
     o3d.visualization.draw_geometries_with_editing([pcd])
     return
 
 
-demo_crop_geometry()
-
-
 # See inlier and outlier point cloud
-def display_inlier_outlier(outpcl, inpcl):
-    out_new = outpcl.paint_uniform_color([1, 0, 0])
-    in_new = inpcl.paint_uniform_color([0.8, 0.8, 0.8])
-    o3d.visualization.draw_geometries([in_new, out_new])
+def display_inlier_outlier(cloud, ind):
+    inlier_cloud = cloud.select_by_index(ind)
+    outlier_cloud = cloud.select_by_index(ind, invert=True)
+
+    print("Showing outliers (red) and inliers (gray): ")
+    outlier_cloud.paint_uniform_color([1, 0, 0])
+    inlier_cloud.paint_uniform_color([0.8, 0.8, 0.8])
+    o3d.visualization.draw_geometries([inlier_cloud, outlier_cloud])
 
 
-# 2.
+# PART ONE: Working on self generated point cloud------------------------------------------------------------------------
+
+# 1.Visualize the cropped point cloud
+
+outlier_pcd = o3d.io.read_point_cloud("Electrical_Pole_Cropped.ply")
+o3d.visualization.draw_geometries([outlier_pcd])
+
+# 2.Removing noise in the data
 
 # Statistical method
-inlier_pcd_stat, ind_stat = outlier_pcd.remove_statistical_outlier(nb_neighbors=20, std_ratio=2.0)
-display_inlier_outlier(outlier_pcd, inlier_pcd_stat)
+# Still finding ideal parameters!
+inlier_pcd_stat, ind_stat = outlier_pcd.remove_statistical_outlier(nb_neighbors=10, std_ratio=3.0)
+display_inlier_outlier(outlier_pcd, ind_stat)
 
 # Radius method
-inlier_pcd_rad, ind_rad = outlier_pcd.remove_radius_outlier(nb_points=16, radius=1)
-display_inlier_outlier(outlier_pcd, inlier_pcd_rad)
+inlier_pcd_rad, ind_rad = outlier_pcd.remove_radius_outlier(nb_points=20, radius=0.18)
+display_inlier_outlier(outlier_pcd, ind_rad)
 
-# 3.
-
-# Surface reconstruction
+# 3.Surface reconstruction
 
 # Alpha Shapes
-alpha = 0.1
+alpha = 0.05
 alpha_shape = o3d.geometry.TriangleMesh.create_from_point_cloud_alpha_shape(inlier_pcd_rad, alpha)
 o3d.visualization.draw_geometries([alpha_shape])
 
 # Ball Pivoting
-# PreRequisite: Vertex Normals Estimation
+# PreRequisite: Vertex Normals Estimation (V.N.E.)
 inlier_pcd_rad.estimate_normals(search_param=o3d.geometry.KDTreeSearchParamHybrid(radius=0.1, max_nn=30))
-radii = [0.005, 0.01, 0.02, 0.04]
+radii = [0.1, 0.15, 0.20, 0.25]
 ball_pivoting = o3d.geometry.TriangleMesh.create_from_point_cloud_ball_pivoting(inlier_pcd_rad,
                                                                                 o3d.utility.DoubleVector(radii))
 o3d.visualization.draw_geometries([inlier_pcd_rad, ball_pivoting])
 
 # Poissons
+# PreRequisite: V.N.E.
+# Still finding ideal parameters!
 with o3d.utility.VerbosityContextManager(o3d.utility.VerbosityLevel.Debug) as cm:
-    poissons, densities = o3d.geometry.TriangleMesh.create_from_point_cloud_poisson(inlier_pcd_rad, depth=15)
+    poissons, densities = o3d.geometry.TriangleMesh.create_from_point_cloud_poisson(inlier_pcd_rad, depth=20)
     o3d.visualization.draw_geometries([poissons])
-
 
 # PART TWO: Working on point cloud ITC building scans--------------------------------------------------------------------
 # Convert numpy to point cloud
@@ -143,8 +144,6 @@ def demo_manual_registration():
 
 demo_manual_registration()
 
-
-
 # PART THREE: Working on benchmark dataset (Redwood)---------------------------------------------------------------------
-#Robust Reconstruction
-#Check Readme.md
+# Robust Reconstruction
+# Check Readme.md
