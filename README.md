@@ -12,7 +12,7 @@ The script used in the project is available as a .py file in the repository. The
 
 ## Outline Objectives
 
-Following is the list of objectives completed see the outline.md file
+Following is the list of objectives completed see the outline.md file https://github.com/NomitRwt/DiplomaProject/blob/master/Outline.md#proposed-methodology
 - [x] Reading different formats: polygon files, text files and rgbd images
 - [x] Visualization: of all formats
 - [x] Pre Processing: downsampling, outlier removal
