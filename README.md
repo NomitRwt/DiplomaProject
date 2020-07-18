@@ -1,8 +1,8 @@
 Diploma Project
 
-The script used in the project is available as a .py file in the repository. The script is also divided into three parts according to the dataset being used. Small changes can be made to the varibles according to the process being used. Three input datasets used in the project are:
+The script used in the project is available as a .py file in the repository. The script is also divided into three parts according to the dataset being used. Small changes can be made to the varaibles according to the process being used. Three input datasets used in the project are:
 
-1. A self generated point cloud via structure through motion. The files are available with the name electrical pole and a subsequent cropped point cloud also.
+1. A self generated point cloud via structure through motion. The files are available with the name electrical pole and a subsequent cropped point cloud also, which was generated in the process
 
 2. Two scans for ITC building Enschede for understanding manuel registration. The sample format is available to understand the structure of the input file into the open3d.
 
