@@ -1,14 +1,20 @@
 # Diploma Project
+## Overview
+Prior to starting, the following papers were recommended for the project.
 
-## Intro
+1. Papers [1] and [2] provide a benchmark data for **RGBD SLAM** and **Scene Understanding** respectively.
+2. Paper [3] proposes a robust method for reconstruction of indoor scenes, which is used in the library.
+3. Paper [4] introduces the open3d library.
 
-The script used in the project is available as a .py file in the repository. The script is also divided into three parts according to the dataset. Small changes can be made to the varaibles according to the process being used. Three input datasets used in the project are:
+## Introduction
 
-1. A self generated point cloud via structure through motion. The files are available with the name electrical pole and a subsequent cropped point cloud also, which was generated in the process
+The script used in the project is available as a ProjectFile.py in the repository. The script is also divided into three parts according to the dataset. Small changes can be made to the variables according to the process being used. Three input datasets used in the project are:
 
-2. Two scans for ITC building Enschede for understanding manuel registration. The sample format is available to understand the structure of the input file into the open3d.
+1. A self generated point cloud via structure through motion. The files are available with the name electrical pole and a subsequent cropped point cloud also, which was generated in the process.
 
-3. Benchmark dataset used in [3] The whole reconstruction pipeline is available at the github repository for the open3d. The implementation is very stright-forward. Link to the dataset and repository: http://redwood-data.org/indoor/ , https://github.com/intel-isl/Open3D
+2. Two scans for ITC building Enschede for understanding manuel registration. The sample.txt is available to understand the structure of the input file into the open3d.
+
+3. Benchmark dataset used in [3]. The whole reconstruction pipeline is available at the github repository for the open3d. The project was not restricted to the data mention in the reference list. The implementation is very stright-forward. Link to the dataset and repository: http://redwood-data.org/indoor/ , https://github.com/intel-isl/Open3D
 
 ## Outline Objectives
 
@@ -18,7 +24,7 @@ Following is the list of objectives completed see the **outline.md** file https:
 - [x] Pre Processing: downsampling, outlier removal
 - [x] Co-Registration of two points clouds: itc building scans
 
-### Additional Objectives
+## Additional Objectives
 - [ ] Understanding the Tensorflow and/or pytorch implementation
 - [ ] More on structure from motion
 
@@ -32,4 +38,4 @@ Following is the list of objectives completed see the **outline.md** file https:
 
 [4]Zhou, Q.-Y., Park, J., & Koltun, V. (2018). Open3D: A Modern Library for 3D Data Processing. https://arxiv.org/abs/1801.09847v1
 
-*Would like to thank all the contributors and the authors. The reference list non-exhaustive and would be updated throughout the work.
+*Would like to thank all the contributors and the authors. The reference list is non-exhaustive and would be updated throughout the work.
