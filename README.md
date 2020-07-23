@@ -3,7 +3,7 @@
 Prior to starting, the following papers were recommended for the project.
 
 1. Papers [1] and [2] provide a benchmark data for **RGBD SLAM** and **Scene Understanding** respectively.
-2. Paper [3] proposes a robust method for reconstruction of indoor scenes, which is used in the library.
+2. Paper [3] proposes a robust method for reconstruction of indoor scenes.
 3. Paper [4] introduces the open3d library.
 
 ## Introduction
