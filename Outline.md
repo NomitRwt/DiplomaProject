@@ -34,7 +34,9 @@ Handling point cloud data have many challenges due to its large size. In this pr
 
 4 Parallelization and how is it implemented?
 
-5 How does limitations of user hardware effects these process?
+5 Whether are there standard implementations through which we can compare the performance of these libraries or in other words is that implementation fair to judge the quality of both.
+
+6 How does limitations of user hardware effects these process?
 
 ## Proposed Methodology:
 
