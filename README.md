@@ -6,6 +6,14 @@ Prior to starting, the following papers were recommended for the project.
 2. Paper [3] proposes a robust method for reconstruction of indoor scenes.
 3. Paper [4] introduces the open3d library.
 
+## Open3d
+
+Usefullnes by support of popular format, algorithms and platforms. Ease of use as in no heavy dependencies and feature Creep. For each data strucutre (point cloud, mesh and RGBD Images) respective data structures and algorithms have been implemented.
+
+Python interface for the open3d is shown to be faster than Point Cloud Library for only a single implementation. Reading the point cloud, downsampling it and finally estimating the vertex normals. Another implementation of the ICP is compared.
+
+High optimization at the backend. Using openMP many of the functions have been optimized at the backend.
+
 ## Introduction
 
 The script used in the project is available as a ProjectFile.py in the repository. The script is also divided into three parts according to the dataset. Small changes can be made to the variables according to the process being used. Three input datasets used in the project are:
