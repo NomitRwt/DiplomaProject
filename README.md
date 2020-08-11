@@ -12,7 +12,7 @@ Usefullnes by support of popular format, algorithms and platforms. Ease of use a
 
 Python interface for the open3d is shown to be faster than Point Cloud Library. Reading the point cloud, downsampling it and finally estimating the vertex normals. Another implementation of the ICP is compared.
 
-High optimization at the backend. Using openMP many of the functions have been optimized at the backend.
+High optimization at the backend. Using OpenMP many of the functions have been optimized at the backend and OpenGL is used for rendering.
 
 ## Introduction
 
@@ -31,10 +31,6 @@ Following is the list of objectives completed see the **outline.md** file https:
 - [x] Visualization: of all formats
 - [x] Pre Processing: downsampling, outlier removal
 - [x] Co-Registration of two points clouds: itc building scans
-
-## Additional Objectives
-- [ ] Understanding the Tensorflow and/or pytorch implementation
-- [ ] More on structure from motion
 
 ## References*
 
