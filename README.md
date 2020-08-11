@@ -8,9 +8,9 @@ Prior to starting, the following papers were recommended for the project.
 
 ## Open3d
 
-Usefullnes by support of popular format, algorithms and platforms. Ease of use as in no heavy dependencies and feature Creep. For each data strucutre (point cloud, mesh and RGBD Images) respective data structures and algorithms have been implemented.
+Usefullnes by support of popular format, algorithms and platforms. Ease of use as in no heavy dependencies and feature Creep. For each input point cloud, mesh and RGBD Images respective data structures and algorithms have been implemented.
 
-Python interface for the open3d is shown to be faster than Point Cloud Library for only a single implementation. Reading the point cloud, downsampling it and finally estimating the vertex normals. Another implementation of the ICP is compared.
+Python interface for the open3d is shown to be faster than Point Cloud Library. Reading the point cloud, downsampling it and finally estimating the vertex normals. Another implementation of the ICP is compared.
 
 High optimization at the backend. Using openMP many of the functions have been optimized at the backend.
 
