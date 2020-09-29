@@ -4,39 +4,21 @@
 
 Handling point cloud data have many challenges due to its large size. In this project student would demonstrate use of Open3D package for efficient point cloud data visualisation, basic pre-processing (e.g. voxel down sampling) and processing steps (e.g. registering two point clouds) etc.
 
-## Research Questions:
+## Project Questions:
 
-0 Popular related open source projects/libraries?
+1. Popular projects for point cloud handling?<br />
+[awesome-point-cloud-processing](https://github.com/mmolero/awesome-point-cloud-processing)<br />
+[awesome-point-cloud-analysis](https://github.com/Yochengliu/awesome-point-cloud-analysis)
 
-0.1 What are different formats?
+2. How to analyse the data structures for point cloud, mesh and rgbd images?
 
-0.1.1 How do point cloud and mesh compare to other formats?
+3. Complexity/Cost of the algorithms?
 
-0.1.2 Differences in other formats, can we structure/characterise them?
+4. Parallelization and how is it implemented?
 
-0.1.3 Discussion on formats by popular scanners or format and scanners specifics?
+5. Standard implementations to judge these libraries? In other words is that implementation fair to judge the quality of both?
 
-0.1.4 Inputting scanner specific formats in open3d?
-
-1 What is upper and lower limits of the file sizes (largest 3d point clouds) available as open source, how much can the library consume?
-
-2 How does the library input the point cloud?
-
-3 Efficiency in-
-
-3.1 Rendering (downsampling, point splats comparison, are they at all related?)
-
-4 What are the preprocessing methods existing in literature?
-
-4.1 Preprocssing methods implemented in library?
-
-4.2 Complexity/Cost of the algorithms?
-
-4 Parallelization and how is it implemented?
-
-5 Whether are there standard implementations through which we can compare the performance of these libraries or in other words is that implementation fair to judge the quality of both.
-
-6 How does limitations of user hardware effects these process?
+6. How does limitations of user hardware effects these process?
 
 ## Proposed Methodology:
 
