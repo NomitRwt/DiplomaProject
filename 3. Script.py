@@ -18,49 +18,43 @@ while(i<=100):
     t = stop-start
     time_taken_pcd.append(t)
 
-print(np.mean(time_taken_pcd))
+print(np.mean(time_taken_pcd),"Mean time for .pcd")
 
 i = 0
-iteration = []
 time_taken_ply = []
 while(i<=100):
     i = i + 1
-    iteration.append(i)
     start = time.perf_counter_ns()
     point_cloud = o3d.io.read_point_cloud("Datasets/Output/output.ply")
     stop = time.perf_counter_ns()
     t = stop-start
     time_taken_ply.append(t)
 
-print(np.mean(time_taken_ply))
+print(np.mean(time_taken_ply),"Polygon file format =")
 
 i = 0
-iteration = []
 time_taken_pts = []
 while(i<=100):
     i = i + 1
-    iteration.append(i)
     start = time.perf_counter_ns()
     point_cloud = o3d.io.read_point_cloud("Datasets/Output/output.pts")
     stop = time.perf_counter_ns()
     t = stop-start
     time_taken_pts.append(t)
 
-print(np.mean(time_taken_pts))
+print( np.mean(time_taken_pts),"Laser scan plain format")
 
 i = 0
-iteration = []
 time_taken_xyz = []
 while(i<=100):
     i = i + 1
-    iteration.append(i)
     start = time.perf_counter_ns()
     point_cloud = o3d.io.read_point_cloud("Datasets/Output/output.xyz")
     stop = time.perf_counter_ns()
     t = stop-start
     time_taken_xyz.append(t)
 
-print(np.mean(time_taken_xyz))
+print(np.mean(time_taken_xyz),"XYZ")
 
 
 import matplotlib.pyplot as plt
