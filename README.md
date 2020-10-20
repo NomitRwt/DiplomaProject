@@ -1,6 +1,8 @@
 # Diploma Project
-[Problem statement](https://docs.google.com/document/d/1d4nzrT0IixDHqlURy8QD1RD7FVuKZWWZsPDFnbyRPnU/edit?usp=sharing)<br />
-[Final Report](https://docs.google.com/document/d/1JjelogFZSd6KGRCKDUHBpTK2JYhU2TTOfnMt4HE7Ql8/edit?usp=sharing)
+1.[Problem statement](https://docs.google.com/document/d/1d4nzrT0IixDHqlURy8QD1RD7FVuKZWWZsPDFnbyRPnU/edit?usp=sharing)<br />
+2.[Final Report](https://docs.google.com/document/d/1JjelogFZSd6KGRCKDUHBpTK2JYhU2TTOfnMt4HE7Ql8/edit?usp=sharing)<br />
+3.Scripts<br />
+4.Datasets<br />
 
 ## References
 
